@@ -1,0 +1,30 @@
+//ID: 203486824 Roni Sedakah
+import biuoop.DrawSurface;
+import biuoop.KeyboardSensor;
+
+/**
+ * pause screen class.
+ */
+public class PauseScreen implements Animation {
+    private KeyboardSensor keyboard;
+    private boolean stop;
+
+    /**
+     * constructor.
+     * @param k = KeyboardSensor.
+     */
+    public PauseScreen(KeyboardSensor k) {
+        this.keyboard = k;
+        this.stop = false;
+    }
+
+    @Override
+    public void doOneFrame(DrawSurface d) {
+        d.drawText(10, d.getHeight() / 2, "paused -- press space to continue", 32);
+    }
+
+    @Override
+    public boolean shouldStop() {
+        return this.stop;
+    }
+}
